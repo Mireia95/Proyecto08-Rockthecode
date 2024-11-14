@@ -9,9 +9,9 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  /*gracis al middleware verifyCollection, he pasado a req la clave collection, que dependerà de que colección es el dato que estoy pasando
+  /*gracis al middleware verifyCollection, he pasado a req req.collection, que dependerà de que colección es el dato que estoy pasando
    a la folder de Cloudinary le paso este dato para asegurarme donde va guardada la imagen.
-   Lo he conseguido informandome de que podia aceptar "params". Una vez descubierto que podía aceptar una funcion y pasarle req, he decidido pasarle req.collection
+   Lo he conseguido informandome de lo que podia aceptar "params". Una vez descubierto que podía aceptar una funcion y pasarle req, he decidido pasarle req.collection y decidir asi el nombre de la folder
   */
   params: async (req, file) => {
     console.log(req.collection);
