@@ -15,6 +15,7 @@ const getPersonajes = async (req, res, next) => {
 const postPersonaje = async (req, res, next) => {
   try {
     const newPersonaje = new Personaje(req.body);
+    console.log(req.collection); //me aseguro que le he pasado correctamente la colección con el middleware verifyCollection
     if (req.file) {
       //si paso un file como imagen, el valor del campo img será el path de Cloudinary
       newPersonaje.img = req.file.path;

@@ -15,7 +15,7 @@ const getCasas = async (req, res, next) => {
 const postCasa = async (req, res, next) => {
   try {
     const newCasa = new Casa(req.body);
-
+    console.log(req.collection); //me aseguro que le he pasado correctamente la colección con el middleware verifyCollection
     if (req.file) {
       //si paso un file como imagen, el valor del campo img será el path de Cloudinary
       newCasa.img = req.file.path;

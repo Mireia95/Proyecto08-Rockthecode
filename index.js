@@ -10,7 +10,7 @@ const app = express();
 connectDB(); //me conecto a la BBBDD
 connectCloudinary(); //me conecto a Cloudinary
 
-//!connectCloudinary(); //configuro libreria cloudinary
+connectCloudinary(); //configuro libreria cloudinary
 
 app.use(express.json()); //para interpretar datos en formato json
 
